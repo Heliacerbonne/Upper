@@ -1,0 +1,3 @@
+Le jeu du Rebond est un jeu développé sous JavaScript à l'occasion d'un devoir.
+Le but de ce jeu est d'établir le plus grand score possible en faisant rebondir la balle sur la raquette.
+Le jeu est dans ça version 1.0 et sera mis à jour en fonction des bugs et critiques des joueurs.

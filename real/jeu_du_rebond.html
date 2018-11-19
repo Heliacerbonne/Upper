@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeu du rebond</title>
+<style type='text/css' >
+*{
+font-family:"Betty";
+font:2em;
+}
+body 
+{
+	background: #FFFFFF;
+background-color:#EDEDED;}
+
+@font-face {
+    font-family: "Betty";
+    src: url('Betty.ttf');
+}
+
+h1 
+{
+	text-align: center;
+	color: #d85852;
+	font-family:"Betty";
+	font-size:3em;
+}
+
+#bouton {
+height:50px;
+width:100px;
+background-color:#FFFFFF;
+border: 2px solid #d85852;
+position:absolute;
+left:30%;
+top:83%;
+}
+
+#bouton:hover {
+background-color:#DDDDDD;
+
+}
+
+#dessin{
+display:inline-block;
+position:absolute;
+left:28%;
+top:18%;
+}
+
+#mentions{
+position:absolute;
+left:52%;
+top:83%;
+}
+
+#score{
+position:absolute;
+left:41%;
+top:77%;
+}
+
+#perdu{
+position:absolute;
+left:33.5%;
+top:90%;
+}
+
+</style>
+<script>
+// démarrage du script une fois que 
+// votre page est chargée
+window.addEventListener("load",initialisation,false);
+
+// le canvas et son contexte doivent être déclarés 
+// en variables globales
+var canvas, ctx, RqtX, RqtY, bouton, compteur=0, score=0, stop=0, interval, bug=0, monImage, nuage, bille;
+Largeur=50;
+Hauteur=10;
+
+function initialisation()
+{
+//alert("page chargée et prête à l'emploi !");
+
+// à compléter en fonction du sujet
+
+// connexion JS -> canvas
+canvas=document.getElementById("dessin");
+// ouverture du contexte
+ctx= canvas.getContext("2d") ;
+nuage=document.getElementById("nuage");
+ctx.drawImage(nuage, 0, 0, 400,400);
+ctx.drawImage(nuage, 200, -80, 500,300);
+ctx.drawImage(nuage, -50, -180, 300,500);
+// le canvas est prêt à l’emploi et accessible à Javascript.
+//alert("dimension du canvas : largeur : "+canvas.width+" hauteur : " +canvas.height);
+bouton=document.getElementById("bouton");
+perdu=document.getElementById("perdu");
+bouton.addEventListener("click",jeu,false);
+}
+
+
+
+function jeu (){
+//alert("Go!");
+compteur=0;////////////////////////////////////////
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+RqtX=canvas.width/2-Largeur/2;
+RqtY=canvas.height-Hauteur/2;
+BalleX=canvas.width/2-10;
+BalleY=canvas.height-Hauteur-27;
+DplcX=3;
+DplcY=3;
+
+//canvas.removeEventListener("click",jeu,false);
+monImage=document.getElementById("monImage");
+ctx.drawImage(monImage, RqtX, RqtY-12);
+bille=document.getElementById("balle");
+ctx.drawImage(bille,BalleX,BalleY,20,20);
+window.addEventListener("keydown",clavier,false);
+if (stop==0){
+interval=setInterval(animation,20);
+stop=1;
+}
+}
+
+function clavier(event){
+//alert (event.keyCode);
+if (event.keyCode==37 && RqtX-6>0){
+ctx.clearRect(RqtX,RqtY-12,Largeur+1,Hauteur+10);
+RqtX-=10;
+ctx.drawImage(monImage, RqtX, RqtY-12);
+ctx.drawImage(nuage, 0, 0, 400,400);
+ctx.drawImage(nuage, 200, -80, 500,300);
+ctx.drawImage(nuage, -50, -180, 300,500);
+}
+
+if (event.keyCode==39 && RqtX<canvas.width-Largeur-5){
+ctx.clearRect(RqtX,RqtY-12,Largeur+1,Hauteur+10);
+RqtX+=10;
+ctx.drawImage(monImage, RqtX, RqtY-12);
+ctx.drawImage(nuage, 0, 0, 400,400);
+ctx.drawImage(nuage, 200, -80, 500,300);
+ctx.drawImage(nuage, -50, -180, 300,500);
+
+}
+}
+
+
+function animation(){
+if (stop>=1){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+perdu.innerHTML="";
+
+bouton.addEventListener("click",jeu,false);
+
+
+}
+////////// Permet de relancer le jeu
+
+
+score=document.getElementById("score");
+score.style.fontSize=2.5+"em";
+score.style.fontFamily='Betty';
+score.style.color="black";
+score.innerHTML=compteur;
+//ctx.clearRect(canvas.width/2,canvas.height-Hauteur-5,10,10);
+ctx.clearRect(BalleX,BalleY,20,20);
+ctx.clearRect(BalleX-11,BalleY-11,22,22);
+
+ctx.drawImage(monImage, RqtX, RqtY-12);
+ctx.drawImage(nuage, 0, 0, 400,400);
+ctx.drawImage(nuage, 200, -80, 500,300);
+ctx.drawImage(nuage, -50, -180, 300,500);
+/*BalleX=Math.random()*(11,canvas.width-11);
+BalleY=Math.random()*(11,canvas.height-11);*/
+BalleX-=DplcX;
+BalleY-=DplcY;
+
+ctx.drawImage(bille,BalleX,BalleY,20,20);
+
+if ( (BalleX<=0)||(BalleX>=canvas.width-20)){
+DplcX*=-1;
+bug=0;
+}
+if ( (BalleY<=0)){
+DplcY*=-1;
+bug=0;
+}
+
+
+if ( (BalleY >=canvas.height-35) && (BalleX+15>=RqtX && BalleX<=(RqtX+Largeur)) && bug!=1){
+
+DplcY*=-1;
+compteur+=1;
+bug=1;
+}
+/*if ( (BalleY >=canvas.height-36) && (BalleX>=RqtX && BalleX<=(RqtX+Largeur)) && bug!=1){
+
+DplcY*=-1;
+compteur+=1;
+bug=1;
+}*/
+
+
+
+
+if (BalleY>canvas.height){
+
+clearInterval(interval);
+stop=0;
+perdu.style.fontSize=1.5+"em";
+perdu.style.fontFamily='Betty';
+perdu.style.color="black";
+perdu.innerHTML="Vous avez perdu la boule, voulez-vous rejouer?";
+
+
+
+}
+
+
+}
+
+
+</script>
+</head>
+<body>
+<h1> Jeu du Rebond </h1>
+<img src="barre.png" id="monImage" style=" display:none"/>
+<img src="nuage2.png" id="nuage" style="display:none;"/>
+<img src="balle.png" id="balle" style="display:none;"/>
+<canvas id="dessin" width="600px" height="400px" style="background:#57b1e7;" >
+</canvas>
+<form>
+<input type="button" id="bouton" value="Go!"/>
+</form><br>
+<p id="score"></p>
+<p id="perdu"></p>
+<p id="mentions">Agence Upper, tous droits réservés ®, 2015</p>
+</body>
+</html>
+
+
+

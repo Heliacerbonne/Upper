@@ -1,0 +1,157 @@
+
+#flou {
+	position: absolute;
+	bottom: 0;
+	right:  0;
+	visibility: hidden;
+	overflow:   hidden;
+	z-index:    2;
+}
+#flou > img {
+	width: 100%;
+	height: 100%;
+}
+
+/* La div qui contient les div qui avec les petites images */
+#lesImages {
+	z-index:100;
+	height:auto;
+	width:auto;
+}
+
+#lesImages img {
+	float:left;
+	margin: 20px 50px 20px 50px;
+	display:inline-block;
+}
+
+/*Le fond de la section qui contient tout à part le menu*/
+#fond {
+	width:100%;
+	height:100%;
+}
+
+/* Les petites images */
+#p1,#p2, #p3, #p4, #p5, #p6, #p7 {
+	height:250px;
+	width:250px;
+}
+
+
+/* Les div qui contiennent les petites images */
+.image{
+	display:inline-block;
+	z-index:10;
+}
+
+/* La classe des petites images pour l'opacité */
+.opa{
+	opacity:0.8;
+	-webkit-transform: rotate(0deg); /* Safari */
+	    -ms-transform: rotate(0deg); /* IE   9 */
+	        transform: rotate(0deg);
+}
+
+.opa:hover{
+	opacity: 1;
+	cursor:  pointer;
+	-webkit-transform: rotate(3deg); /* Safari */
+	    -ms-transform: rotate(3deg); /* IE   9 */
+	        transform: rotate(3deg);
+}
+
+/* Les grandes imags */
+#g1, #g2, #g3, #g4, #g5, #g6, #g7 {
+	visibility:hidden;
+	z-index:5;
+	margin:0;
+	padding:0;
+	height:500px;
+	width:800px;
+	top:13%;
+	left:20%;
+	position:fixed;
+	overflow:hidden;
+}
+
+/* Les div des grandes images */
+.imageG{
+	position: fixed;
+	top:      13%;
+	left:     23%;
+	width:   45%;
+	height:  77.8%;
+	margin:  0;
+	padding: 0;
+	border: 2px solid #EDEDED;
+	border-radius: 10px;
+	z-index:  10;
+	overflow: hidden;
+}
+
+.imageG img {
+	width:    70%;
+	overflow: hidden;
+}
+
+/* Les div des descriptions des membres d'Upper */
+.descriptionG {
+	margin:  0;
+	padding: 0;
+	top: 13%;
+	left: 54%;
+	z-index: 10;
+	height: 77.75%;
+	width: 20%;
+	position: fixed;
+	border: 2px solid #EDEDED;
+	border-radius: 10px;
+	background-color: #57B1E7;
+	word-wrap: break-word;
+	vertical-align: middle;
+	text-align: left;
+}
+
+/*Le texte */
+.descriptionG p{
+	width:80%;
+	height:85%;
+	padding:5%;
+	font-size:120%;
+	z-index:10;
+	word-wrap: break-word;
+	vertical-align:middle;
+	text-align:left;
+}
+.descriptionG a{
+	color: #FFF;
+}
+
+/* La croix */
+#fermer{
+	visibility:hidden;
+	position:fixed;
+	top:15%;
+	left:72%;
+	z-index:10;
+}
+
+#fermer img{
+	height:15%;
+	width:15%;
+	opacity:0.6;
+}
+
+#fermer img:hover{
+	height:15%;
+	width:15%;
+	opacity:1;
+	cursor:pointer;
+}
+
+#scroll {
+	width: 150px;
+	top: 100px;
+	left: 30px;
+	position: absolute;
+}
