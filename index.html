@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html id="top" lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Accueil - UPPER</title>
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="/static/js/jquery-2.1.4.min.js"></script>
+		<link href="themes/4/js-image-slider.css" rel="stylesheet" type="text/css" />
+		<script src="themes/4/js-image-slider.js" type="text/javascript"></script>
+		<link rel="icon" type="image/png" href="/static/img/UPPER.png" />
+	</head>
+	<body>
+		<nav id="main-nav">
+			<span class="nav-right">
+				<a href="equipe.html">L'équipe</a>
+				<a href="activite.html">Notre activité</a>
+				<a href="realisations.html">Réalisations</a>
+				<a href="contact.php">Nous contacter</a>
+			</span>
+		</nav>
+		<div class="nav-clear"></div>
+		<img id="scroll" src="static/img/UPPER.png" alt="UPPER" class="logo" width="170" height="220"/>
+		<section id="home">
+			<h1>Upper <br />Prenez de la hauteur !</h1>
+			<div id="video" align="center"><iframe src="https://www.youtube.com/embed/KODXMVWyQS4" frameborder="0" allowfullscreen></iframe></div>
+		</section>
+		<section class="infos">
+			<article class="two-two">
+				<h2>Qui sommes nous ?</h2>
+				<p>
+					Upper est une agence de communication globale créée par de jeunes étudiants en DUT MMI (Métiers du Multimédia et de l'Internet), créatifs et pleins d'idées innovantes.
+					Nous intervenons à différentes étapes de votre projet afin de vous aider à réaliser les multiples éléments qui dynamiseront l'ensemble de votre activité tout en réfléchissant à la personnalité que vous désirez afficher ainsi que vos valeurs. 
+				<br />
+					Notre devise : Écouter, conseiller, réaliser, combler !
+				<br />
+					<ul><li><a class="redirec" href="equipe.html">En savoir plus sur les membres de l'agence.</a></li></ul>
+				</p>
+			</article>
+			<article class="two-two">
+				<h2>Que faisons nous ?</h2>
+				<p>
+					Notre travail couvre trois domaines qui permettent d'améliorer la communication de votre entreprise en ayant toujours comme cible vos valeurs: le print (carte de visite, flyers, affiches, charte graphique), le web (conception ou amélioration de votre site web, portativité, référencement sur les moteurs de recherche) et l'audiovisuel (captation d'évènements, réalisation d'un film d'agence).<br/>
+					Nous vous assurons des résultats à la hauteur de vos attentes !<br/>
+					<ul><li><a class="redirec" href="activite.html">En savoir plus sur notre activité.</a></li></ul>
+				</p>
+			</article>
+			<article class="two-two">
+				<h2>Nos réalisations.</h2>
+				<p>
+					Afin d'avoir une vision plus concrète de ce que nous produisons, n'hésitez pas à consulter notre galerie où nous exposons nos travaux en infographie, en web et en audiovisuel. Cette liste est mise à jour régulièrement.<br/>
+					<ul><li><a  class="redirec" href="realisations.html">Visitez notre galerie de réalisations.</a></li></ul>
+				</p>
+			</article>
+			<article class="two-two">
+				<h2>Intéréssé par nos services ?</h2>
+				<p>
+					Si vous et votre structure trouvez des difficultés à construire votre communication, votre site web, votre charte graphique ou encore votre film d'agence, faites appel à nous, afin que nous élaborions un projet ensemble.<br/>
+					<ul><li><a class="redirec" href="contact.html">Contactez nous via notre formulaire.</a></li></ul>
+				</p>
+			</article>
+		</section>
+		<div id="slider">
+            <img src="/1.JPG"/>
+            <img src="/2.JPG"/>
+        </div>
+        <!--Custom navigation buttons on both sides-->
+        <!--nav bar-->
+        <div style="text-align:center;padding:20px;z-index:20;">
+            <a onclick="imageSlider.previous()" class="group2-Prev"></a>
+            <a id='auto' onclick="switchAutoAdvance()"></a>
+            <a onclick="imageSlider.next()" class="group2-Next"></a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //The following script is for the group 2 navigation buttons.
+        function switchAutoAdvance() {
+            imageSlider.switchAuto();
+            switchPlayPauseClass();
+        }
+        function switchPlayPauseClass() {
+            var auto = document.getElementById('auto');
+            var isAutoPlay = imageSlider.getAuto();
+            auto.className = isAutoPlay ? "group2-Pause" : "group2-Play";
+            auto.title = isAutoPlay ? "Pause" : "Play";
+        }
+        switchPlayPauseClass();
+    </script>
+			
+		<footer id="footer">
+			<a href="#top" class="top-link"><img class="fleche_haut" src="/static/img/fleche_haut.png" height="75px" width="75px"/></a>
+			<a href="https://facebook.com/pages/Upper/821358121245424?ref=aymt_homepage_panel" target="_blank"><img class="img-partage" src="/static/img/fb.png" height="75px" width="75px"/></a>
+			<a href="https://twitter.com/agence_upper" target="_blank"><img class="img-partage" src="/static/img/twit.png" height="75px" width="75px"/></a>
+			<a href="https://plus.google.com/share?url=http://upper.olympe.in" target="_blank"><img class="img-partage" src="/static/img/ggplus.png" height="75px" width="75px"/></a>
+		</footer>
+	</body>
+</html>

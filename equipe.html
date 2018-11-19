@@ -1,0 +1,153 @@
+<!DOCTYPE html> 
+<html id="top" lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>L'équipe - UPPER</title>
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<link rel="stylesheet" href="/static/css/equipeStyle.css"/>
+		<script src="/static/js/jquery-2.1.4.min.js"></script>
+		<script src="/static/js/upper.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="logo2.png" >
+		<script type="text/javascript" src="/nico/description.js"></script>
+	</head>
+	<body> 
+		<nav id="main-nav">
+			<a class="nav-left" href="/">Retour à l'accueil</a>
+			<span class="nav-right">
+				<a href="equipe.html">L'équipe</a>
+				<a href="activite.html">Notre activité</a>
+				<a href="realisations.html">Réalisations</a>
+				<a href="contact.php">Nous contacter</a>
+			</span>
+		</nav>
+		<div class="nav-clear"></div>
+		<img id="scroll" src="/static/img/UPPER.png" alt="Logotype UPPER" class="logo" width="170" height="220"/>
+		<section id="fond">
+			<!-- Image floue donnant l'impression d'un filtre flou, l'image sera à REDIMENSSIONNER -->
+			<div id="flou">
+				<img src="/nico/flou.png"/>
+			</div>
+
+			<!-- Div qui contient les petites images --> 
+			<div id="lesImages" align="center">
+				<div class="image"><img src="/static/img/equipe/Nicolas Bro 500 500.jpg" id="p1" class="opa" alt="Nicolas Broquet" /></div>
+				<div class="image"><img src="/static/img/equipe/Hélia 500 500.jpg" id="p2" class="opa"  alt="Hélia Cerbonne" /></div>
+				<div class="image"><img src="/static/img/equipe/Margaux 500 500.jpg" id="p3" class="opa"  alt="Margaux Canu" /></div>
+				<br/>
+				<div class="image"><img src="/static/img/equipe/Stéphen 500 500.jpg" id="p4" class="opa" alt="Stéphen Blot" /></div>
+				<div class="image"><img src="/static/img/equipe/Kévin 500 500.jpg" id="p5" class="opa" alt="Kévin Auger" /></div>
+				<div class="image"><img src="/static/img/equipe/NicolasB 500 500.jpg" id="p6" class="opa" alt="Nicolas Blanc" /></div>
+			</div>
+		</section>
+
+		<!-- Grandes images + descriptions invisibles et rendues visibles par le JS-->
+		<div id="g1">
+			<div class="imageG" id="imageG1">
+				<img src="/static/img/equipe/Nicolas Broquet 3200 4776.jpg" id="gr1"/>
+			</div>
+			<div class="descriptionG" align="center">
+				<p>
+					<b>Nicolas Broquet</b>
+					<br/>
+					<i>Programmeur</i>
+					<br/>
+					<br/>
+					Le langage HTML, le PHP et le JavaScript n'ont plus de secrets pour moi.<br/>
+					Je m'occupe de réaliser l'ensemble des fonctionnalités d'un site web, du début à la fin.<br/>
+					Je mets en ouvre des solutions techniques afin de concevoir des sites sur-mesure adaptés à tout type de projet.
+				</p>
+			</div>
+		</div>
+		<div id="g2">
+			<div class="imageG" id="imageG2">
+				<img src="/static/img/equipe/Hélia 3200 4776.jpg" id="gr2"/>
+			</div>
+			<div class="descriptionG" align="center">
+				<p>
+					<b>Hélia Cerbonne</b>
+					<br/>
+					<i>Développeur web</i>
+					<br/>
+					<br/>
+					Passionnée d'informatique et de codage, je réalise des algorithmes et crée des sites web répondant aux attentes des clients.<br/>
+					Je déjoue les secrets des lignes de codes et j'optimise vos contenus en adaptant votre site à tout support numérique.
+				</p>
+			</div>
+		</div>
+		<div id="g3">
+			<div class="imageG" id="imageG3">
+				<img src="/static/img/equipe/Margaux 3200 4784.jpg" id="gr3"/>
+			</div>
+			<div class="descriptionG" align="center">
+				<p>
+					<b>Margaux Canu</b>
+					<br/>
+					<i>Chef de projet / Graphiste</i>
+					<br/>
+					<br/>
+					Je m'occupe du bon déroulement du/des projet(s), en prenant garde de ne pas dépasser les délais, ni les budgets imposés, tout en faisant régner une ambiance amicale et joyeuse.<br/>
+					Je m'occupe aussi de la partie graphique, travaillant sur les logiciels d'infographie afin de créer tous types de réalisation (logo, affiches, carte de visite...).
+				</p>
+			</div>
+		</div>
+		<div id="g4">
+			<div class="imageG" id="imageG4">
+				<img src="/static/img/equipe/Stéphen 3200 4784.jpg" id="gr4"/>
+			</div>
+			<div class="descriptionG" align="center">
+				<p>
+					<b>Stéphen Blot</b>
+					<br/>
+					<i>Designer graphique</i>
+					<br/>
+					<br/>
+					Passionné de dessin et d'infographie, je m'occupe de la communication visuelle. Je travaille principalement sur le sens des messages afin de créer une identité visuelle qui colle parfaitement à votre activité.<br/>
+					A travers Upper, je m'exprime dans différents domaines : l'édition, le motion design (animation) et l'interactivité (web et multimédia).
+				</p>
+			</div>
+		</div>
+		<div id="g5">
+			<div class="imageG" id="imageG5">
+				<img src="/static/img/equipe/Kévin 3200 4784.jpg" id="gr5" />
+			</div>
+			<div class="descriptionG" align="center">
+				<p>
+					<b>Kévin Auger</b>
+					<br/>
+					<i>Caméraman/Monteur</i>
+					<br/>
+					<br/>
+					Je m'occupe de la partie audiovisuelle, caméra en main pour des prises de vue réelles ou derrière un écran afin de monter les différents plans.<br/>
+					Le montage est la dernière étape du projet, qui permet d'aboutir à un résultat fini et concret.
+				</p>
+			</div>
+		</div>
+		<div id="g6">
+			<div class="imageG" id="imageG6">
+				<img src="/static/img/equipe/Nicolas Blanc 3200 4784.jpg" id="gr6" />
+			</div>
+			<div class="descriptionG" align="center">
+				<p>
+					<b>Nicolas Blanc</b>
+					<br/>
+					<i>Scénariste / Caméraman / Effets spéciaux</i>
+					<br/>
+					<br/>
+					Imaginatif et communicant, je m'occupe de réaliser des scénarios uniques afin de promouvoir vos différents projets.<br/>
+					Je commence ensuite le tournage, pour mettre en image les mots posés sur le papier. Je réalise les effets spéciaux dans les vidéos qui en ont besoin.
+				</p>
+			</div>
+		</div>
+		<!--la croix pour fermer -->
+		<div id="fermer">
+			<img src="/nico/croix blanche.png"/>
+		</div>
+		<footer id="footer">
+			<a href="#top" class="top-link"><img class="fleche_haut" src="/static/img/fleche_haut.png" height="75px" width="75px"/></a>
+			<a href="https://facebook.com/pages/Upper/821358121245424?ref=aymt_homepage_panel" target="_blank"><img class="img-partage" src="/static/img/fb.png" height="75px" width="75px"/></a>
+			<a href="https://twitter.com/agence_upper" target="_blank"><img class="img-partage" src="/static/img/twit.png" height="75px" width="75px"/></a>
+			<a href="https://plus.google.com/share?url=http://upper.olympe.in" target="_blank"><img class="img-partage" src="/static/img/ggplus.png" height="75px" width="75px"/></a>
+		</footer>
+	</body> 
+</html> 
